@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		DFF0B3A0238EB42900E63712 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF0B39F238EB42900E63712 /* AppDelegate.swift */; };
 		DFF0B3A2238EB42900E63712 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF0B3A1238EB42900E63712 /* SceneDelegate.swift */; };
-		DFF0B3A4238EB42900E63712 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF0B3A3238EB42900E63712 /* ViewController.swift */; };
+		DFF0B3A4238EB42900E63712 /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF0B3A3238EB42900E63712 /* TodoListViewController.swift */; };
 		DFF0B3A7238EB42900E63712 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFF0B3A5238EB42900E63712 /* Main.storyboard */; };
 		DFF0B3A9238EB42B00E63712 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFF0B3A8238EB42B00E63712 /* Assets.xcassets */; };
 		DFF0B3AC238EB42B00E63712 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFF0B3AA238EB42B00E63712 /* LaunchScreen.storyboard */; };
+		DFF0B3B4238EBEA100E63712 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF0B3B3238EBEA100E63712 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DFF0B39C238EB42900E63712 /* Todoey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todoey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFF0B39F238EB42900E63712 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFF0B3A1238EB42900E63712 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DFF0B3A3238EB42900E63712 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DFF0B3A3238EB42900E63712 /* TodoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewController.swift; sourceTree = "<group>"; };
 		DFF0B3A6238EB42900E63712 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DFF0B3A8238EB42B00E63712 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DFF0B3AB238EB42B00E63712 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DFF0B3AD238EB42B00E63712 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFF0B3B3238EBEA100E63712 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,8 @@
 			children = (
 				DFF0B39F238EB42900E63712 /* AppDelegate.swift */,
 				DFF0B3A1238EB42900E63712 /* SceneDelegate.swift */,
-				DFF0B3A3238EB42900E63712 /* ViewController.swift */,
+				DFF0B3A3238EB42900E63712 /* TodoListViewController.swift */,
+				DFF0B3B3238EBEA100E63712 /* Constants.swift */,
 				DFF0B3A5238EB42900E63712 /* Main.storyboard */,
 				DFF0B3A8238EB42B00E63712 /* Assets.xcassets */,
 				DFF0B3AA238EB42B00E63712 /* LaunchScreen.storyboard */,
@@ -138,9 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFF0B3A4238EB42900E63712 /* ViewController.swift in Sources */,
+				DFF0B3A4238EB42900E63712 /* TodoListViewController.swift in Sources */,
 				DFF0B3A0238EB42900E63712 /* AppDelegate.swift in Sources */,
 				DFF0B3A2238EB42900E63712 /* SceneDelegate.swift in Sources */,
+				DFF0B3B4238EBEA100E63712 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
