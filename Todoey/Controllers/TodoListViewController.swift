@@ -8,8 +8,9 @@
 
 import UIKit
 import RealmSwift
+import SwipeCellKit
 
-class TodoListViewController: UITableViewController {
+class TodoListViewController: SwipeTableViewController {
     
     var todoItems: Results<Item>?
     
@@ -24,6 +25,7 @@ class TodoListViewController: UITableViewController {
     override func viewDidLoad() {
         print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         super.viewDidLoad()
+        tableView.rowHeight = 80
     }
     
     //MARK: - Tableview Datasource Methods
@@ -32,9 +34,27 @@ class TodoListViewController: UITableViewController {
         return todoItems?.count ?? 1
     }
     
+    //MARK: - Delete From Swipe
+    
+    override func uppdateModel(at indexPath: IndexPath) {
+        
+        if let itemForDeletion = self.todoItems?[indexPath.row] {
+            do {
+                try self.realm.write {
+                    self.realm.delete(itemForDeletion)
+                }
+                
+            } catch {
+                print("Error deleting items, \(error)")
+            }
+        }
+        
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath)
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
+        //let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath)
         if let item = todoItems?[indexPath.row] {
             cell.textLabel?.text = item.title
             cell.accessoryType = item.done ? .checkmark : .none
@@ -59,7 +79,7 @@ class TodoListViewController: UITableViewController {
             }
         }
         tableView.reloadData()
-
+        
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
@@ -71,8 +91,6 @@ class TodoListViewController: UITableViewController {
         let alert = UIAlertController(title: "Add New Todoey Item", message: "", preferredStyle: .alert)
         
         let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
-            
-            
             
             if let currentCategory = self.selectedCategory {
                 
@@ -89,7 +107,7 @@ class TodoListViewController: UITableViewController {
             }
             
             self.tableView.reloadData()
-                                    
+            
         }
         
         alert.addTextField { (alertTextField) in
@@ -103,31 +121,30 @@ class TodoListViewController: UITableViewController {
     }
     
     func loadItems() {
-        
         todoItems = selectedCategory?.items.sorted(byKeyPath: "title", ascending: true)
         tableView.reloadData()
     }
     
+}
+
+//MARK: - Search bar methods
+
+extension TodoListViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        todoItems = todoItems?.filter("title CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "dateCreated", ascending: true)
+        tableView.reloadData()
     }
     
-    //MARK: - Search bar methods
-    
-    extension TodoListViewController: UISearchBarDelegate {
-    
-        func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-            
-            todoItems = todoItems?.filter("title CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "dateCreated", ascending: true)
-            tableView.reloadData()
-        }
-    
-        func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-            if searchBar.text?.count == 0 {
-                loadItems()
-                DispatchQueue.main.async {
-                    searchBar.resignFirstResponder()
-                }
+        if searchBar.text?.count == 0 {
+            loadItems()
+            DispatchQueue.main.async {
+                searchBar.resignFirstResponder()
             }
         }
+    }
     
 }

@@ -13,4 +13,5 @@ struct K {
     static let toDoListArray = "TotoListArray"
     static let categoryCellIdentifier = "CategoryCell"
     static let goToItemsIdentifier = "goToItems"
+    static let genericCellIdentifier = "Cell"
 }

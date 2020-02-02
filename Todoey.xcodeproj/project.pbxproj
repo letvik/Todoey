@@ -18,6 +18,7 @@
 		DFF0B3A9238EB42B00E63712 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFF0B3A8238EB42B00E63712 /* Assets.xcassets */; };
 		DFF0B3AC238EB42B00E63712 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFF0B3AA238EB42B00E63712 /* LaunchScreen.storyboard */; };
 		DFF0B3B4238EBEA100E63712 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF0B3B3238EBEA100E63712 /* Constants.swift */; };
+		DFF545E423E6DD3D00672B1C /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF545E323E6DD3D00672B1C /* SwipeTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		DFF0B3AB238EB42B00E63712 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DFF0B3AD238EB42B00E63712 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFF0B3B3238EBEA100E63712 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DFF545E323E6DD3D00672B1C /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
 		E23574AE252A947AF792E182 /* Pods-Todoey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todoey.release.xcconfig"; path = "Target Support Files/Pods-Todoey/Pods-Todoey.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,6 +116,7 @@
 			children = (
 				DF667C7023A0EC6D0051BEA5 /* CategoryTableViewController.swift */,
 				DFF0B3A3238EB42900E63712 /* TodoListViewController.swift */,
+				DFF545E323E6DD3D00672B1C /* SwipeTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFF545E423E6DD3D00672B1C /* SwipeTableViewController.swift in Sources */,
 				DFF0B3A4238EB42900E63712 /* TodoListViewController.swift in Sources */,
 				DFF0B3A0238EB42900E63712 /* AppDelegate.swift in Sources */,
 				DFF0B3A2238EB42900E63712 /* SceneDelegate.swift in Sources */,
