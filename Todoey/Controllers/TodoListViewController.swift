@@ -23,9 +23,10 @@ class TodoListViewController: SwipeTableViewController {
     }
     
     override func viewDidLoad() {
+        
         print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         super.viewDidLoad()
-        tableView.rowHeight = 80
+        
     }
     
     //MARK: - Tableview Datasource Methods
@@ -54,7 +55,7 @@ class TodoListViewController: SwipeTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
-        //let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath)
+        
         if let item = todoItems?[indexPath.row] {
             cell.textLabel?.text = item.title
             cell.accessoryType = item.done ? .checkmark : .none
